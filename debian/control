@@ -1,0 +1,18 @@
+Source: libjs-fuelux
+Standards-Version: 3.8.4
+Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
+Uploaders: Vitex <vitex@hippy.cz>
+Build-Depends: debhelper (>= 7.0.50~), yui-compressor
+
+Package: libjs-fuelux
+Depends: libjs-twitter-bootstrap (>= 3.0.1)
+Architecture: all
+Multi-Arch: foreign
+Section: web
+Priority: optional
+Homepage: http://exacttarget.github.com/fuelux/
+Description: Fuel UX extends Twitter Bootstrap with additional lightweight JavaScript controls.
+ Fuel UX extends Twitter Bootstrap with additional lightweight JavaScript controls.
+ Other benefits include easy installation into web projects, integrated scripts for
+ customizing Bootstrap and Fuel UX, simple updates, and solid optimization for
+ deployment. All functionality is covered by live documentation and unit tests.
