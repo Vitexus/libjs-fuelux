@@ -1,6 +1,4 @@
 #!/bin/bash
-
-rm -rf build
 if [ -d "fuelux" ]; then
   cd fuelux
   git pull
@@ -13,7 +11,12 @@ npm install
 npm run build
 npm run dist
 
-BUILD=`cat  ../build | perl -ne 'chomp; print join(".", splice(@{[split/\./,$_]}, 0, -1), map {++$_} pop @{[split/\./,$_]}), "\n";'`
+
+if [ -e "../build" ]; then
+  BUILD=`cat  ../build | perl -ne 'chomp; print join(".", splice(@{[split/\./,$_]}, 0, -1), map {++$_} pop @{[split/\./,$_]}), "\n";'`
+else
+  BUILD="1";
+fi
 echo $BUILD > ../build
 
 VERSION=`cat package.json | grep '"version":' | awk -F'"' '{ print $4 }'`
